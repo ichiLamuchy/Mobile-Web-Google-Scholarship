@@ -1,0 +1,18 @@
+=====================
+
+Start Small
+=====================
+
+Set viewport
+<meta name="viewport" content="with=device-width, initial-scale=1">
+
+// initial-scale=1 means 1:1 
+so it will keep as it is on CSS
+
+CSS allow content to overflow it's container
+(Such as img overflow the size of div)
+To prevent this set 
+
+img, embed, object, video{
+  max-width: 100%;
+}
