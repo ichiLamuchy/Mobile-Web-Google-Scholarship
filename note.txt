@@ -3,9 +3,12 @@ Start Small
 
 =====================
 using http://udacity.github.io/RWDF-samples/quizzes/viewport-quiz/
+
+*** https://developers.google.com/web/tools/lighthouse/ ***
+Check list on your front end tool
+
+
 Set viewport
-
-
 <meta name="viewport" content="with=device-width, initial-scale=1">
 
 // initial-scale=1 means 1:1 
