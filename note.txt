@@ -1,9 +1,11 @@
 =====================
-
 Start Small
-=====================
 
+=====================
+using http://udacity.github.io/RWDF-samples/quizzes/viewport-quiz/
 Set viewport
+
+
 <meta name="viewport" content="with=device-width, initial-scale=1">
 
 // initial-scale=1 means 1:1 
