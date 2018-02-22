@@ -4,20 +4,45 @@ Start Small
 =====================
 using http://udacity.github.io/RWDF-samples/quizzes/viewport-quiz/
 
-*** https://developers.google.com/web/tools/lighthouse/ ***
-Check list on your front end tool
 
 
-Set viewport
-<meta name="viewport" content="with=device-width, initial-scale=1">
+        *** https://developers.google.com/web/tools/lighthouse/ ***
+        Check list on your frontend tool
 
-// initial-scale=1 means 1:1 
-so it will keep as it is on CSS
 
-CSS allow content to overflow it's container
-(Such as img overflow the size of div)
-To prevent this set 
+        Set viewport
+        <meta name="viewport" content="with=device-width, initial-scale=1">
 
-img, embed, object, video{
-  max-width: 100%;
-}
+                initial-scale=1 means 1:1 
+                so it will keep as it is on CSS
+
+                CSS allow content to overflow it's container
+                (Such as img overflow the size of div)
+                To prevent this set 
+
+                img, embed, object, video{
+                  max-width: 100%;
+                }
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The First step you take is Set to the small divice
+    1:  Set a view port
+    2:  Make all width 100% if they are less than 100% fixed 
+    3:  Tap area at least 48px
+    4:  Check on developer tool
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+------------------
+Note for next step
+
+
+Adding basic media query:
+    <link rel="stylesheet" media="screen and (min-width: 500px)" href="yes.css">
+    or
+    @media screen and (min-width: 500px){
+        body{background-color: green;}
+    }
+    don't do it with @import tag - expensive / too many http request
+
