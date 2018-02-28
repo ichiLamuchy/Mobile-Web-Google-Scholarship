@@ -44,5 +44,98 @@ Adding basic media query:
     @media screen and (min-width: 500px){
         body{background-color: green;}
     }
+    https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_types
+    
     don't do it with @import tag - expensive / too many http request
 
+    use max-width, min-width (according to blowser window)
+    
+-- -- do the rest of quiz later
+    
+    
+    jump to 3-15
+    Grid fluid system
+    Boot strap, 960 pixel grid layout system
+    
+ +++Flexbox +++++++++++++++++++++++++++++
+ 
+        on container div add
+        display:flex;  // defalt fit on the single line
+        flex-wrap: wrap; // can go next row, only re-seize when really need to do.
+        css order attribute to change order
+            @media screen and (min-width: 500px){
+            header {width:100%; order:1;}
+            .blue{width:10%; order:4;}
+            .pink{width:90%; order:3;}
+            .green{width:40%; order:2;}
+            .orange{width:20%; order:5;}
+             }
+    
+ 4 responsive patterns (L4)------------------------------
+    
+    Mostly fluid ----
+        .container{
+                disolay: flex;
+                flew-wrap: wrap;
+            }
+        .box{
+            width: 100%;
+        }
+        @media screen and (min-width: 450px){
+            .dark_blue, .green {width:50%;}
+        }
+        @media screen and (min-width: 550px){
+            .dark_blue, .light_blue {width:25%;}
+            .green, .red, .orange {width:33.3333%;}
+        }
+        @media screen and (min-width: 700px){
+            .container {width700px;
+            margin-left: auto;
+            margin-right: auto;
+         }
+
+
+    Column drop ----
+        
+        Vertically until first break point hits
+        
+        then next break point hits to change the shape
+        
+        Generally once the view port hits a maximum width, 
+        the columns hit a maximun size, and instead of getting wider,
+        margins are added to the left .nd right
+        
+        .container{
+            disolay: flex;
+            flew-wrap: wrap;
+        }
+        .box{
+            width: 100%;
+        }
+      
+        // if the vp changed >= 450px
+        @media screen and (min-width: 450px){
+            .dark_blue {width:25%;}
+            .light_blue {width:75%;}
+        }
+        @media screen and (min-width: 550px){
+            .dark_blue, .green {width:25%;}
+            .light_blue {width:75%;}
+        }
+    
+    Layout shifter ----
+    
+    using order attribute
+    
+    
+    
+        
+    off canvas ( came some elements out depends on the with)
+      
+    sometimes useing aconvination of patterns
+    
+    
+    
+    
+    
+    
