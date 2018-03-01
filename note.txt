@@ -162,7 +162,8 @@ Grid fluid system ==========================
     https://classroom.udacity.com/nanodegrees/nd024/parts/0bf842e9-7269-42de-b68b-812ca7823517/modules/e08f25bf-f172-4fb8-9812-b09ca908ae37/lessons/3561069759/concepts/35307193050923
     off screan content is only comes in when width is big enough
     
-    example:
+    example of side nav :
+    https://www.w3schools.com/howto/howto_js_sidenav.asp
         // JS
         menu.addEventListener('click', function(e) {
             drawer.classList.toggle('open');
