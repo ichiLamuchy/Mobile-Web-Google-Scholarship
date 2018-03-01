@@ -33,12 +33,17 @@ The First step you take is Set to the small divice
     4:  Check on developer tool
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Use media query (@media screen) to set min-width and max-width
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ------------------
 Note for next step
 
 
-Adding basic media query:
+Adding basic media query--------
     <link rel="stylesheet" media="screen and (min-width: 500px)" href="yes.css">
     or
     @media screen and (min-width: 500px){
@@ -50,52 +55,74 @@ Adding basic media query:
 
     use max-width, min-width (according to blowser window)
     
--- -- do the rest of quiz later
+Break point -------------------
+    break point to change the size of written and etc:
+    
+    example:
+    725 minor break point
+    800 minor break point - nav menu will show up, hamburger will disappeared
+    960 break point - layout change
+    1024 ads show up
+    
+    where to put break point:
+    look at content 
+    
+    step1: desk top to go - small as I get
+    slowly size up and see the lay out that where the content likes to have a break point
+    add link on head on each break point
+   <link rel="stylesheet" media="screen and (min-width:550px)" 
+    href = "medium-size.css"> 
     
     
-    jump to 3-15
-    Grid fluid system
+
+Grid fluid system ==========================
     Boot strap, 960 pixel grid layout system
     
- +++Flexbox +++++++++++++++++++++++++++++
- 
-        on container div add
-        display:flex;  // defalt fit on the single line
-        flex-wrap: wrap; // can go next row, only re-seize when really need to do.
-        css order attribute to change order
-            @media screen and (min-width: 500px){
-            header {width:100%; order:1;}
-            .blue{width:10%; order:4;}
-            .pink{width:90%; order:3;}
-            .green{width:40%; order:2;}
-            .orange{width:20%; order:5;}
-             }
+    Flexbox ------------
+
+    on container div add
+    display:flex;  // defalt fit on the single line
+    flex-wrap: wrap; // can go next row, only re-seize when really need to do.
+    css order attribute to change order
+        @media screen and (min-width: 500px){
+        header {width:100%; order:1;}
+        .blue{width:10%; order:4;}
+        .pink{width:90%; order:3;}
+        .green{width:40%; order:2;}
+        .orange{width:20%; order:5;}
+         }
     
  4 responsive patterns (L4)------------------------------
     
-    Mostly fluid ----
-        .container{
-                disolay: flex;
-                flew-wrap: wrap;
+    1: Mostly fluid ----
+    
+        below code can be on 1 sheet. Everything is just added onto original css file. 
+        all @media screen can be on the page
+        Only what you want to change (over write or add) will be on @media screen
+        
+            .container{
+                    disolay: flex;
+                    flew-wrap: wrap;
+                }
+            .box{
+                width: 100%;
             }
-        .box{
-            width: 100%;
-        }
-        @media screen and (min-width: 450px){
-            .dark_blue, .green {width:50%;}
-        }
-        @media screen and (min-width: 550px){
-            .dark_blue, .light_blue {width:25%;}
-            .green, .red, .orange {width:33.3333%;}
-        }
-        @media screen and (min-width: 700px){
-            .container {width700px;
-            margin-left: auto;
-            margin-right: auto;
-         }
+            @media screen and (min-width: 450px){
+                .dark_blue, .green {width:50%;}
+            }
+            @media screen and (min-width: 550px){
+                .dark_blue, .light_blue {width:25%;}
+                .green, .red, .orange {width:33.3333%;}
+            }
+            // the way to keep the margin after 800px width
+            @media screen and (min-width: 700px){
+                .container {width700px;
+                margin-left: auto;
+                margin-right: auto;
+             }
 
 
-    Column drop ----
+    2: Column drop ----
         
         Vertically until first break point hits
         
@@ -123,16 +150,40 @@ Adding basic media query:
             .light_blue {width:75%;}
         }
     
-    Layout shifter ----
+    3: Layout shifter ----
     
-    using order attribute
+        using order attribute. moving the place around.
+        set 
+            width: and order:
+        you can set negative number too
+        default start from 0
+          
+    4: off canvas 
+    https://classroom.udacity.com/nanodegrees/nd024/parts/0bf842e9-7269-42de-b68b-812ca7823517/modules/e08f25bf-f172-4fb8-9812-b09ca908ae37/lessons/3561069759/concepts/35307193050923
+    off screan content is only comes in when width is big enough
     
-    
-    
-        
-    off canvas ( came some elements out depends on the with)
+    example:
+        // JS
+        menu.addEventListener('click', function(e) {
+            drawer.classList.toggle('open');
+            e.stopPropagation();
+        });
+        // CSS
+        nav {
+          width: 300px;
+          position: absolute;
+          /* This trasform moves the drawer off canvas. */
+          -webkit-transform: translate(-300px, 0);
+          transform: translate(-300px, 0);
+          /* Optionally, we animate the drawer. */
+          transition: transform 0.3s ease;
+        }
+        nav.open {
+          -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+        }
       
-    sometimes useing aconvination of patterns
+      
     
     
     
