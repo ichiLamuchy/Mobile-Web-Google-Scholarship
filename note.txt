@@ -299,7 +299,75 @@ Grid fluid system ==========================
               }
 
 
+====================================
+get image Responsive
 
+check out
+https://classroom.udacity.com/courses/ud882
+
+=====================================
+
+====================================================================
+tables
+https://www.thoughtco.com/display-none-vs-visibility-hidden-3466884
+(display:none and visibility: hidden )
+https://css-tricks.com/responsive-data-table-roundup/
+(table data tricks)
+=====================================================================
+
+What to do with tables - 3 ways
+
+1. hiden columns
+       check what is the most important ones to show
+       put display: none for all others
+       
+
+3. no more tables 
+        1: 
+            table, thread, tbody, th, td, tr{
+                display: block;
+            }
+        2: hide table header instead of display none, just keep it way off screen
+            thread tr {
+                position: absolute;
+                top: 9999px;
+                left: -9999px
+            }
+        3: just add padding and set the position relative to td
+        4: 
+        td:before{
+                position: absolute;
+                left: 6px;
+                content: attr(data-th);// pull the data element of each of td elements
+                front-weight bold;
+            }
+        }
+
+3. contained tables
+
+    wrap in the div "contained_table"
+    div>contained_table{
+        width: 100%
+        overflow-x: auto;
+    }
+    
+ ==================================
+ Font reading
+ ==================================
+ 
+ ideal measure is 45-90cpl
+ pretty solid consensus around 65 cpl for web
+ 
+ set at least 
+ font-size:18 px
+ line height: 1.25em
+ 
+  minor break point 
+  adding padding 
+  make font size bigger for easier to read
+ 
+ 
+ 
 
       
 
