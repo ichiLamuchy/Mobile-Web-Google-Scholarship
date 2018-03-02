@@ -34,13 +34,20 @@ The First step you take is Set to the small divice
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    Use media query (@media screen) to set min-width and max-width
+ Use media query (@media screen)
+    1: check each section which can move together and find break point
+    2: use width and order properties to move it arround
+    3: 
+    
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-------------------
-Note for next step
+=================================
+
+Use media query (@media screen)
+
+=================================
 
 
 Adding basic media query--------
@@ -185,7 +192,117 @@ Grid fluid system ==========================
         }
       
       
-    
+  ------------the way it works (for me)-----------------------------------------------------
+  
+  
+  1: to CSS main
+  
+      1. look the web site
+      2. find any segment can be moved together - normally where wrapped in <section> tag
+        give is flow-glow attribute to main css (smallest width first)
+      3. Make sure to set width 100% to all section (hopefully separately) 
+      4. add some padding if necessary
+  
+  2: to index.html
+      1. this is burger menu svg
+        <a id="menu" class="header__menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
+          </svg>
+        </a>
+        
+3: to response CSS file
+        1. on the top
+
+            .content {
+              display: flex;
+              flex-wrap: wrap;
+            }
+
+            .header__menu {
+              display: none;
+            }
+
+            .hero, .top-news, .scores, .weather, .recent-news {
+              order: 10;
+            }
+
+        2: first media query is tidy up header bit - logo, title, nav
+            This is the example
+            .nav {
+                z-index: 10;
+                background-color: #fff;
+                width: 300px;
+                position: absolute;
+                /* This trasform moves the drawer off canvas. */
+                -webkit-transform: translate(-300px, 0);
+                transform: translate(-300px, 0);
+                /* Optionally, we animate the drawer. */
+                transition: transform 0.3s ease;
+              }
+              .nav.open {
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+              }
+              .nav__item {
+                display: list-item;
+                border-bottom: 1px solid #E0E0E0;
+                width: 100%;
+                text-align: left;
+              }
+              .header__menu {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                padding: 1em;
+              }
+              .header__menu svg {
+                width: 32px;
+                fill: #E0E0E0;
+              }
+            }
+
+        3: to the each break point add order attribute and width on the  each section
+        where flow-glow attribute presented
+
+            <script>
+            /*
+            * Open the drawer when the menu ison is clicked.
+            script for burger menu
+            */
+            var menu = document.querySelector('#menu');
+            var main = document.querySelector('main');
+            var drawer = document.querySelector('.nav');
+
+            menu.addEventListener('click', function(e) {
+            drawer.classList.toggle('open');
+            e.stopPropagation();
+            });
+            main.addEventListener('click', function() {
+            drawer.classList.remove('open');
+            });
+
+            </script>
+
+        4: @media screen on each break point
+            mostly change     
+                order: 1;
+                width: 40%;
+
+        5: set @media screen width as 
+
+            @media screen and (min-width: 850px) {
+              main, .header__inner, .nav, .content {
+                width: 850px;
+                margin-left: auto;
+                margin-right: auto;
+              }
+
+
+
+
+      
+
     
     
     
