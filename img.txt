@@ -92,12 +92,20 @@ to do so Grunt, image magic, image optim, you dont have to use them but makes li
 
 Grunt
     install grunt cli in your root.
-    Run grunt on command prompt to run grunt (+++++ vannot find local grunt at the moment BUG?)
+    npm install to install dependancies
+    also make sure you are installed imagemagics (done)
+    Run grunt on command prompt to run grunt 
         "grunt" alone creates a new, completed images directory
         "grunt clean" removes the images directory
         "grunt responsive_images" re-processes images without removing the old ones
     then it create new folder  with separate folder with new image files (as you set) to use for your web
 
+vs code and dependancies
+    need to use 
+    npm install to use package.json file to download depaendancies
+    then use
+    npm run to run on localhost
+    otherwise the udacity front end extension won't rcognise how fast the spped could be
 
 -------------------
 
@@ -116,16 +124,25 @@ Simply reduce number of images and reduce the request make it all quick
 ----------------------
 
 Using text as text when it's on over image,
-Do not use it as 
+Do not use it as graphics, 
 
 ----------------------
 
-need to use 
-npm install to use package.json file to download depaendancies
-then use
-npm run to run on local host
-otherwise the udacity front end extension won't rcognise how fast the spped could be
+using css effect such as shadow and all that cost time to response
+L8-4 variety of background from pure css can be used for web and it is powerful
 
+back gound size cover - if you dont know the size of vp, it would be very handy
+this property, part of image will be lost but you can add transition to make the change smooth
+
+sourse set attribute
+image set attribute
+
+background-size:
+cover - image kept as somall as possible, it matched to containers smallest dimention (x or y)
+completely filled the container though the one of dimention is hidden, not visible
+or contain i- is completely filled is with largest dimention which means shorter dimention may not be filled
+
+use unicode for gfx like marks
 
 
 
