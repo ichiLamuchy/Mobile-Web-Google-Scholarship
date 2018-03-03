@@ -86,7 +86,50 @@ Img optinazation -------------------
 ------------
 give vmin on images
 make width: 50em on article which wrap img
-reduce resolution of volt image
+
+reduce resolution and compress the image of volt image
+to do so Grunt, image magic, image optim, you dont have to use them but makes life so much easier
+
+Grunt
+    install grunt cli in your root.
+    Run grunt on command prompt to run grunt (+++++ vannot find local grunt at the moment BUG?)
+        "grunt" alone creates a new, completed images directory
+        "grunt clean" removes the images directory
+        "grunt responsive_images" re-processes images without removing the old ones
+    then it create new folder  with separate folder with new image files (as you set) to use for your web
+
+
+-------------------
+
+every 100ms delay drops amazon sales of 1%
+requset only can as fast as the half the speed of light,
+simply from San Francisco to London takes 100ms 
+
+For HTTP1
+you could use things like image sprits in CSS
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS
+
+When you use HTTP2, then you don't need to use these hacks
+
+Simply reduce number of images and reduce the request make it all quick
+
+----------------------
+
+Using text as text when it's on over image,
+Do not use it as 
+
+----------------------
+
+need to use 
+npm install to use package.json file to download depaendancies
+then use
+npm run to run on local host
+otherwise the udacity front end extension won't rcognise how fast the spped could be
+
+
+
+
+
 
 
 
