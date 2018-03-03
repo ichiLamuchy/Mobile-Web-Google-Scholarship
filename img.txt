@@ -1,0 +1,78 @@
+======================
+Responsive image
+
+======================
+
+
+Check the image
+Size of the image check(compressed)
+go to network and disable cache then reload, you can see if the size difference
+
+Natural size check
+go to element, click one of image you wannacheck
+then click console and type $0 to see what it is
+type $0.naturalWidth to check natural width
+you could also just click the image on the element
+
+
+
+Total bits = pixels x bits per pixel
+Less pixel x better compressionn = less bytes
+
+how do you have less size while maintain quority
+
+if you fix max-width to image, it;s only goes up till natural image but good to use
+
+if you wanna put image side by side
+
+You can put margin between the images 
+suchu as 
+  margin-right: 10px;
+  width:calc((100% - 10px)/2);
+
+just type selecter to not put marginaftern the last image
+  img:last-of-type {
+    margin:0 ; 
+  }
+
+vh - view port height
+vw - view port width
+width: 100vw;
+
+vmin - view port minimum
+fit to smaller hight or width of view port
+If you set it to both, it will get the effect
+  width: 100vmin;
+  height: 100vmin;
+
+vmax - viewport max
+cover whole vieport without stretching or squosh.
+it corresponding to whichever greater of vp
+but it will chane img tp square 
+  width: 100vmax;
+  height: 100vmax;
+  
+
+Raster vs Vecter
+Vecter is better, browser can render a vecter image at any size
+SVG is so much smaller
+
+use jpg for photograph
+webp is widely supported - alpha transparency and animaton
+if you cannot use svg then use png, 
+use png over gif
+  
+Natural imagesize:
+Obviously image need to be only as large as it's display
+If network is slow, the img will take more time to load
+
+Optimize images
+    grunt-page speed
+
+remember 1em is 16px
+reasonable width is 50em
+
+
+
+
+
