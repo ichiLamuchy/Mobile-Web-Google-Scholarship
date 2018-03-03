@@ -143,6 +143,25 @@ completely filled the container though the one of dimention is hidden, not visib
 or contain i- is completely filled is with largest dimention which means shorter dimention may not be filled
 
 use unicode for gfx like marks
+https://unicode-table.com/en/
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+need charset=uft-8 on meta tag
+
+It's actualy recommended to copy and paste the actual unicode charactor on html
+it's easier to read and maintain
+
+Icon Fond
+    area attribute to increase accessability
+    
+Inline SVG & DataURL
+reduce number of request
+can be written a sback ground on CSS - reduce http request
+Inline SVG on tag and data srl on image tag
+
+inline looks like this src = "data:image/ping;base65.....
+
+
+
 
 
 
