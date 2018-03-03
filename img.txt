@@ -3,6 +3,11 @@ Responsive image
 
 ======================
 
+===========================================================================================================
+VS Code: set up local web server local host
+
+https://blogs.msdn.microsoft.com/cdndevs/2016/01/24/visual-studio-code-and-local-web-server/#comment-111475
+===========================================================================================================
 
 Check the image
     Size of the image check(compressed)
@@ -56,6 +61,7 @@ set vp reate size ----------------------
   
 
 Raster vs Vecter ----------------
+
     Vecter is better, browser can render a vecter image at any size
     SVG is so much smaller
 
@@ -83,29 +89,22 @@ Img optinazation -------------------
         https://www.npmjs.com/package/grunt-pagespeed
 
 
-------------
-give vmin on images
-make width: 50em on article which wrap img
+    Grunt
+        install grunt cli in your root.
+        npm install to install dependancies
+        also make sure you are installed imagemagics (done)
+        Run grunt on command prompt to run grunt 
+            "grunt" alone creates a new, completed images directory
+            "grunt clean" removes the images directory
+            "grunt responsive_images" re-processes images without removing the old ones
+        then it create new folder  with separate folder with new image files (as you set) to use for your web
 
-reduce resolution and compress the image of volt image
-to do so Grunt, image magic, image optim, you dont have to use them but makes life so much easier
-
-Grunt
-    install grunt cli in your root.
-    npm install to install dependancies
-    also make sure you are installed imagemagics (done)
-    Run grunt on command prompt to run grunt 
-        "grunt" alone creates a new, completed images directory
-        "grunt clean" removes the images directory
-        "grunt responsive_images" re-processes images without removing the old ones
-    then it create new folder  with separate folder with new image files (as you set) to use for your web
-
-vs code and dependancies
-    need to use 
-    npm install to use package.json file to download depaendancies
-    then use
-    npm run to run on localhost
-    otherwise the udacity front end extension won't rcognise how fast the spped could be
+    vs code and dependancies
+        need to use 
+        npm install to use package.json file to download depaendancies
+        then use
+        npm run to run on localhost
+        otherwise the udacity front end extension won't rcognise how fast the spped could be
 
 -------------------
 
@@ -138,7 +137,7 @@ sourse set attribute
 image set attribute
 
 background-size:
-cover - image kept as somall as possible, it matched to containers smallest dimention (x or y)
+cover - image kept as small as possible, it matched to containers smallest dimention (x or y)
 completely filled the container though the one of dimention is hidden, not visible
 or contain i- is completely filled is with largest dimention which means shorter dimention may not be filled
 
@@ -150,18 +149,29 @@ need charset=uft-8 on meta tag
 It's actualy recommended to copy and paste the actual unicode charactor on html
 it's easier to read and maintain
 
-Icon Fond
+Icon Font
     area attribute to increase accessability
     
-Inline SVG & DataURL
-reduce number of request
-can be written a sback ground on CSS - reduce http request
-Inline SVG on tag and data srl on image tag
+Inline SVG & DataURL ----------------------------------
+    reduce number of request
+    can be written a background on CSS - reduce http request
+    https://css-tricks.com/lodge/svg/09-svg-data-uris/
 
-inline looks like this src = "data:image/ping;base65.....
+    Inline SVG on tag and data srl on image tag
+    inline looks like this src = "data:image/ping;base65.....
 
 
+================================================================================
+use vector when it's possible. 
+inline is good
+external is good for using frequently as you can pick it up from cache
 
+1. make the wrapper max-width 600-1200px
+2. each image width 100%
+3. use grunt to change the size of image and compressor
+4. think if you need the image use icon font or css pure back ground when possible
+5. choose background-size: cover (or contain);
+6. 
 
 
 
