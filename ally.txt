@@ -44,6 +44,38 @@ Styling
 
 Should alays accesable by keyboard
 
+tab order
+https://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tabindex-attribute
+    Be careful with CSS
+        Form tag can be used key board based on the posion on the DOM
+        So even using css to float: right; on the first item which visually shows the last visually on brower
+        1st tab will be associate with the first DOM element.
+        https://webaim.org/standards/wcag/checklist#sc1.3.2
+
+    tabindex atribute
+        can be used as tabindex = "0"
+        negative number like -1 not in the natural tab order
+        can be programatically focused with focus()method
+            document.querySelecter("#model").focus()
+    "0"
+        is in the natural tab order
+        and can be programmatically focused
+    "5"
+        is in the natural tab order
+        jumped to the front of the tab order
+        anti-pattern
+        confusing to screen reader
+
+    ++tab is for something user will be interactive
+    
+    managing focus
+    
+        things like menu items on single page website where it takes you to the
+        right part of the page when you clicked, you can add taborder = "-1" no it doesn't appear on the natural taborder
+        but call its focus method after the user has taken their action
+        
+        
+
 
 
 
