@@ -14,7 +14,7 @@ Check the image
     go to network and disable cache then reload, you can see if the size difference
 
 Natural size check
-    go to element, click one of image you wannacheck
+    go to element, click one of image you wanna check
     then click console and type $0 to see what it is
     type $0.naturalWidth to check natural width
     you could also just click the image on the element
@@ -108,57 +108,73 @@ Img optinazation -------------------
 
 -------------------
 
-every 100ms delay drops amazon sales of 1%
-requset only can as fast as the half the speed of light,
-simply from San Francisco to London takes 100ms 
+        every 100ms delay drops amazon sales of 1%
+        requset only can as fast as the half the speed of light,
+        simply from San Francisco to London takes 100ms 
 
-For HTTP1
-you could use things like image sprits in CSS
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS
+        For HTTP1
+        you could use things like image sprits in CSS
+        https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS
 
-When you use HTTP2, then you don't need to use these hacks
+        When you use HTTP2, then you don't need to use these hacks
 
-Simply reduce number of images and reduce the request make it all quick
+        Simply reduce number of images and reduce the request make it all quick
 
 ----------------------
 
 Using text as text when it's on over image,
 Do not use it as graphics, 
 
-----------------------
+Think if you really need image +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-using css effect such as shadow and all that cost time to response
-L8-4 variety of background from pure css can be used for web and it is powerful
+    using css effect such as shadow and all that cost time to response
+    L8-4 variety of background from pure css can be used for web and it is powerful
 
-back gound size cover - if you dont know the size of vp, it would be very handy
-this property, part of image will be lost but you can add transition to make the change smooth
+    back gound size cover - if you dont know the size of vp, it would be very handy
+    this property, part of image will be lost but you can add transition to make the change smooth
 
-sourse set attribute
-image set attribute
+    sourse set attribute
+    image set attribute
 
-background-size:
-cover - image kept as small as possible, it matched to containers smallest dimention (x or y)
-completely filled the container though the one of dimention is hidden, not visible
-or contain i- is completely filled is with largest dimention which means shorter dimention may not be filled
+    background-size:
+    cover - image kept as small as possible, it matched to containers smallest dimention (x or y)
+    completely filled the container though the one of dimention is hidden, not visible
+    or contain i- is completely filled is with largest dimention which means shorter dimention may not be filled
 
-use unicode for gfx like marks
-https://unicode-table.com/en/
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
-need charset=uft-8 on meta tag
+    use unicode -----------------------------------------
 
-It's actualy recommended to copy and paste the actual unicode charactor on html
-it's easier to read and maintain
+        https://unicode-table.com/en/
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+        need charset=uft-8 on meta tag
 
-Icon Font
-    area attribute to increase accessability
-    
-Inline SVG & DataURL ----------------------------------
-    reduce number of request
-    can be written a background on CSS - reduce http request
-    https://css-tricks.com/lodge/svg/09-svg-data-uris/
+        It's actualy recommended to copy and paste the actual unicode charactor on html
+        it's easier to read and maintain
 
-    Inline SVG on tag and data srl on image tag
-    inline looks like this src = "data:image/ping;base65.....
+        1: use html code such as &#128522; directly in html
+        2: see if work then copy the actual calacter then paste it on where &#128522; is
+
+
+    Icon Font -----------------------------------------
+        http://zocial.smcllns.com/
+        http://fontello.com/
+        https://fontawesome.com/
+        http://weloveiconfonts.com/
+        https://css-tricks.com/examples/IconFont/
+        https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+
+        how to
+        https://classroom.udacity.com/nanodegrees/nd024/parts/0bf842e9-7269-42de-b68b-812ca7823517/modules/c1af53e5-7b6f-4bdf-be4a-24a7a865de18/lessons/3483659506/concepts/34791494350923
+
+    Inline SVG & DataURL ----------------------------------
+        https://www.lynda.com/CSS-tutorials/Adding-SVG-file-svg-your-page/374186/384066-4.html
+        check how exactly doing later +++++++++++++++++++
+
+        reduce number of request
+        can be written a background on CSS - reduce http request
+        https://css-tricks.com/lodge/svg/09-svg-data-uris/
+
+        Inline SVG on tag and data srl on image tag
+        inline looks like this src = "data:image/ping;base65.....
 
 
 ================================================================================
