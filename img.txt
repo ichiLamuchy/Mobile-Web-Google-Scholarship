@@ -187,7 +187,10 @@ external is good for using frequently as you can pick it up from cache
 3. use grunt to change the size of image and compressor
 4. think if you need the image use icon font or css pure back ground when possible
 5. choose background-size: cover (or contain);
-6. 
+6. use unicoe
+7. use iconfont
+8. use svg inline data
+9.
 
 
 
