@@ -1,0 +1,49 @@
+=======================
+ Accessibility
+
+=======================
+
+Easier to read,
+it makes sense
+Good contrast for read
+
+Visual impairment:
+need - Sound, navigate through key boad, large print, color contrast, screen reader
+
+Minor or dexterity impairments
+They use only key boad, eye tracking software, twitches, voice dictation
+
+Hearing impairments:
+i.e, messenger app could provide flash alart as well as sound nortification
+
+Cognitive impairment : ADD Dyslecxia, autism
+zoom in to easier to read, minimul design
+
+
+ChromeVox Lite
+  munimal functional screen reader
+  
+WACAG
+    https://www.w3.org/TR/WCAG20/
+    
+    Checklist for WACAG ++++++++++++++++++++++++++++
+    https://webaim.org/standards/wcag/checklist
+    
+    POUR:
+    Percivable
+    operable
+    Understandable
+    Robust
+
+
+--------------------------------------------------------------------------------
+
+Focus on Key board
+Sementics
+Styling
+
+Should alays accesable by keyboard
+
+
+
+
