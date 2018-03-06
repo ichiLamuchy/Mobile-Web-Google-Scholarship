@@ -1,0 +1,56 @@
+==============================
+Semantics
+
+==============================
+
+
+assistitwve technoloy 
+  divice, software, tools
+  
+Programmatically expressed semantics
+Affodance
+
+Web AIM WCAG 2.0 Checklist 4.1.2
+
+Name (Label), Role, Value: makup is used in a way that facilitates accessability
+How:
+
+Screene reader says:
+ Element Role - what type of element it is
+    
+    sometimes screen reader simply states element role
+    i.e. edit text
+ Elements name 
+    i.e. your email address
+ 
+ State
+    
+I could look like this if you only need screen  reader but no UI ----------
+
+        main
+            form
+                radio button
+                    name: round trip
+                    state: selected
+                edit text
+                    name: full name
+                combo box
+                    value: no preference
+                    name: seat type
+                    state collapsed
+                button
+                    name: search
+Screen reader take HTML DOM then modify it
+
+
+Link, button automatically handled
+
+++++++++ do 12-12 on with udacity extention
+
+
+2 type of labels 
+visible labels
+text alternatives (like img alt)
+
+            
+            
