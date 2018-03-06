@@ -1,0 +1,39 @@
+==================================
+ARIA
+
+==================================
+
+  For accesibility:
+      ++++++++++++++++
+        DOM order
+        Focus
+        Keyboad
+        Semantics
+        Labeling
+        Heading
+        Landmaeks
+        Links
+      +++++++++++++++++
+      
+
+        How to express semantics HTML cannot express
+        Aria works by allowing you to specify attributes on elements
+        which modify the way that element is translated into the accessibility tree
+
+        ARIA 1.0 spec: https://www.w3.org/TR/wai-aria/
+        ARIA 1.1 spec: https://www.w3.org/TR/wai-aria-1.1/
+
+    Example, 
+    aria-role = "checkbox" aria-checked="true"
+    
+    aria attribute always need explicit value
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
