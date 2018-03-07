@@ -1,0 +1,86 @@
+===================
+HTTP
+===================
+
++++++++++++++++++L1-8 dev tool quiz & L1-11 L2-7 do later!!!!!!!!!!
+
+Promise
+https://eu.udacity.com/course/javascript-promises--ud898
+
+Fetch
+https://jakearchibald.com/2015/thats-so-fetch/
+
+JS promise by Jake
+https://developers.google.com/web/fundamentals/primers/promises?hl=en
+
+Netcat
+http://nc110.sourceforge.net/
+(i.e) 
+
+    nc google.com 80
+    GET / HTTP/1.1 (then enter twice, first one is new line second is indicate finish)
+    Then it will give you header
+    bit like curl -I / curl --head 
+
+    Method HTTP Verb
+        Other than GET, POST, PUT, DELETE
+        there are also HEAD, OPTION
+
+    If you do 
+    nc google.com 80
+    HEAD / HTTP/1.1 
+
+        You get the headers of a file with out receiving the entire file itself
+        you can check such as Content-Length and Last-Modified to see 
+        if the cached contents are still up to date
+
+    nc google.com 80
+    OPTION / HTTP/1.1 
+
+        it gives a list of methods are accepted on the current URL, 
+        but not every server supports this
+
+    So when you are setting header you can write
+
+        nc google.com 80
+        GET / HTTP/1.1 
+        Host: host.com
+        Date: Wed, qq Jan 1995 23:00:00 GMT
+        whatever-header: yes
+
+
+TCP allows us to have multiple, independent streams of data
+between 2 machines. Steams are distinguished by port numbers
+
+HTTPS additional TLS hand shake
+
+
+====================
+HTTP 2
+
+====================
+
+
+TTFB time to first byte
+head of line blocking (synchronous)
+
+Browser being able to open up 6 parallel connections
+helps but not so great.
+HTTP 1.1 header -Connection: keep-alive
+
+bundlesJS can put things all together to make it one request
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
