@@ -2,7 +2,7 @@
 HTTP
 ===================
 
-+++++++++++++++++L1-8 dev tool quiz & L1-11 L2-7 do later!!!!!!!!!!
++++++++++++++++++L1-8 dev tool quiz & L1-11 L2-7　L3-3、L3-4 L3-8 L3-13 L4-6 do later!!!!!!!!!!
 
 Promise
 https://eu.udacity.com/course/javascript-promises--ud898
@@ -56,7 +56,7 @@ HTTPS additional TLS hand shake
 
 
 ====================
-HTTP 2
+HTTPS
 
 ====================
 
@@ -70,11 +70,102 @@ HTTP 1.1 header -Connection: keep-alive
 
 bundlesJS can put things all together to make it one request
 
+TLS (formerly known as SSL)
+Hash512 the number sys the how big the out put of the hash is in bits
 
+Instead of encrypt whole documents, just hash of the documents
+is encrypted, check if signature is valid, you decrypt the signature
+and hash the document yourself to see if those values match
 
+TLS hand shake:
 
+    having the server send you a certificate,
+    The certificate contents the public key of the server, 
+    some additional information like the somain the certificate is for,
+    and signature by certificate authority.
+    
+    client checks if the domain is correct and also checks if authority signature is valid
+    all browser have a collection of certificate authorities including their public keys saved locally,
+    so it is trival to check if the signature is valid
+    
+    clients now generates a random key for symmetric encryption to be used from here on in.
+    The browser encrypts the random key with server's public key.and sends it over 
+    
+    There are 2 benefits, symmentic encryption is faster, more efficient 
+    and scales better to big data compared to asymeric encryption.
+    mor eimportantly, server only to be able to continue if it is truly 
+    in possession of the private key and can decrypt the new random key.
+    
+    This effectively calidatesthe servers's identity. If successful AGP protocal
+    can take over
+    
+    +++++ Any issue for the TLS connection  ++++++++++++++
 
+    https://badssl.com/
+    great web
+    
+    Mixed contents:
+    
+    Mixed passive/display content is content served over HTTP that is included 
+    in an HTTPS webpage, but that cannot alter other portions of the webpage
+        <img> (src attribute)
+        <audio> (src attribute)
+        <video> (src attribute)
+        <object> subresources (when an <object> performs HTTP requests)
+    
+    Mixed active content is content that has access to all or parts of 
+    the Document Object Model of the HTTPS page.
+        <script> (src attribute)
+        <link> (href attribute) (this includes CSS stylesheets)
+        <iframe> (src attribute)
+        XMLHttpRequest requests
+        fetch() requests
+        All cases in CSS where a <url> value is used (@font-face, cursor, background-image, and so forth).
+        <object> (data attribute)
 
+=======================
+  HTTP/2
+
+=======================
+
+    How much request and etc
+    +++++ http://httparchive.org/trends.php
+
+    gzip compression
+        bundling (zipping) pages on a web server before the page is sent to the visitor. 
+        This saves bandwidth and therefore increases the loading speed of the page significantly. 
+
+        HTTP/2 can compress the header, it is also many redundant - host name cache name etc
+        TLS required
+
+    No more headers on text
+        Wireshark or devtools still can be used to check
+
+    Multiplexing
+        convining multi signals 
+
+    Stream (request) are split up into frames an are being multi plexed onto single connection
+    if one stream is blocked then another stream can take over
+
+    There is HTTP2 compression
+        that is tailored towards the specific structure of headers
+        and multi plexing feature of HTTP/2. Stream share the compressor too
+        This means a header never has to be sent twice
+        since compressor recognise that it's been sent before
+        so sends the reference instead
+
+    working with HTTP/2
+        you don't need to concatination JS using bundle is not necessary
+        more request, more headers can be reused
+            having multiple connections to different server is actually bad for your performance
+        minifying and compressing your JS, CSS and images are still good idea
+        (byte saved is byte saved!)
+
+       HTTP/2 is backward compatable
+       All servers that speaks HTTP/2 will be able to speak HTTP/1
+       https://caniuse.com/#feat=http2
+   
+   
 
 
 
