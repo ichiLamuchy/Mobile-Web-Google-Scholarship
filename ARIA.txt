@@ -2,6 +2,9 @@
 ARIA
 
 ==================================
+https://github.com/udacity/ud891
+for exercise
+
 
   For accesibility:
       ++++++++++++++++
@@ -24,15 +27,51 @@ ARIA
         ARIA 1.1 spec: https://www.w3.org/TR/wai-aria-1.1/
 
     Example, 
-    aria-role = "checkbox" aria-checked="true"
-    
+    role = "checkbox" aria-checked="true"
     aria attribute always need explicit value
+     
+    you can set 
+        funtion Checkbox(el){
+            this.elsetAttributs('role', 'checkbox');
+            if (this.el.hasAttribute('checked')){
+                this.el.setAttribute('aria-checked', 'true');           
+            } else {
+                this.el.setAttribute('area-checked', 'false');
+            }
+        }
+        Checkbox.prototype.toggle = function (){
+            if (this.el.hasAttribute('checked'))
+                this.el.removeAttribute('checked');
+
+                this.el.setAtribute('area-checked', 'false');
+            }else {
+                this.el.setAttribute('checked', '');
+                this.el.setAttribute('area-checked', 'true');
+            }
+       }
+     
+    Roles -------------------------------
+    
+        you can modify the sementic meaning by using role
+        <button role="switch"
+
+        area can express sementic patterns do not exist in html even!
+        such as role = "tree"  / role = "treeitem"
+
+        ARIA allows us to create accessible widgets - not possible in plain html
+
+        ARIA can add extra description text and label, 
+        which is only exposed to assisted technology APIs.
+
+        <role = "alart"> Attention!</div> 
+            immidiately will voice over
+
+
+        ARIA 1.1 roles (draft): https://www.w3.org/TR/wai-aria-1.1/#roles
+        ARIA 1.1 practices guide (draft): https://www.w3.org/TR/wai-aria-practices-1.1/
       
-      
-      
-      
-      
-      
+        * important - role attribute set the same tag as tabindex attribute is in
+        
       
       
       
