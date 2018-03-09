@@ -2,7 +2,7 @@
 HTTP
 ===================
 
-+++++++++++++++++L1-8 dev tool quiz & L1-11 L2-7　L3-3、L3-4 L3-8 L3-13 L4-6 do later!!!!!!!!!!
++++++++++++++++++L1-8 dev tool quiz & L1-11 L2-7　L3-3、L3-4 L3-8 L3-13 L4-6 L5-6 L5-7 L5-8 L5-9 do later!!!!!!!!!!
 
 Promise
 https://eu.udacity.com/course/javascript-promises--ud898
@@ -164,14 +164,39 @@ TLS hand shake:
        HTTP/2 is backward compatable
        All servers that speaks HTTP/2 will be able to speak HTTP/1
        https://caniuse.com/#feat=http2
+       
+============================
+ security
+============================
    
+   Same origin policy
+        Java script is not allowed to access not the same origin materials
+        origins - three parts ( Data Scheme, Hostname, and port)
+
+
+        cannot fetch from different origin 
+        (you actually can get 200 back but not able to read)
+        
+        Cannot inspect iframe or java script if it was from another origin
+
+        <img> cannot access another origin in JS
+
+        Browser pushes the same origin policy
+     
+     
+    Cross Origin Resource Sharing (CORS) +++++++++++++++++++++++++
    
+        JSONP - return script containing the data instea of dataitself
+        (JASON with padding) - function name as query param, server return a function
 
-
-
-
-
-
-
-
-
+        if request "Referer:" headder is on then 
+        you wiill have "Access-Control-Allowed_Origin": yours.com
+        But it is already almost too late as you the respomnse is after request (obviously:)
+        
+        You could use (for get request)
+            "Preflight Requests"
+            use 
+            OPTIONS / --- this is header method for Preflight Requests
+            Referer: yours.com
+        https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests    
+            
