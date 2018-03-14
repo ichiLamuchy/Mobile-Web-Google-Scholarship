@@ -66,11 +66,53 @@ for exercise
         <role = "alart"> Attention!</div> 
             immidiately will voice over
 
-
-        ARIA 1.1 roles (draft): https://www.w3.org/TR/wai-aria-1.1/#roles
-        ARIA 1.1 practices guide (draft): https://www.w3.org/TR/wai-aria-practices-1.1/
       
         * important - role attribute set the same tag as tabindex attribute is in
+        
+        Aria spec - Taxonomy pof possible value
+        https://www.w3.org/TR/wai-aria-1.1/#namefromcontent
+        
+        Practice guide: gives you example of how to do
+        https://www.w3.org/TR/wai-aria-practices-1.1/
+        
+        abstruct role means common to several role but may not used as value for the role attribute
+        
+        eample of JS
+        useing setAttribute to set such as ('role', 'radiogroup') to each el
+        removeAttribute and setAttribute to switch around
+        
+        adding labels
+        
+        aria-label
+            <button aria-label="menu" class = "hamburger"> (some pic)</button>
+            there is no text only visual indication
+            in this case it would be 
+                    button 
+                    name:"menu"
+            if the button has x mark with text. And the function is for close the window 
+            you can set it as aria-label="close"
+            
+        aria-labelledby
+            specify another id to any element
+            <div role ="radiogroup" aria-labelledby = "id1">
+            then tag where id="id1" has Drink Option then "Drink Option" become the name
+                    radiogroup
+                    name:"Drink Option" 
+                    
+            it is works similar to label element but the relation is oppositway around.
+            <label> elemets refers to the thing it labels (<input>)
+            labledeby refers to the things labels it
+            
+            aria-labelledby can take multiple elements 
+            The label will be concatenated in the order of the ID refs are given
+            It overrides all other name sources for an element.
+                even if there are area-label or class attribute there, 
+                aria-labelledby will always take precedence.
+            
+        aria-describedby
+
+        
+        
         
       
       
