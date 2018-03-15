@@ -1,28 +1,27 @@
-=====================
-Start Small
 
-=====================
-using http://udacity.github.io/RWDF-samples/quizzes/viewport-quiz/
+## Start Small
 
+>Testing Web
+>http://udacity.github.io/RWDF-samples/quizzes/viewport-quiz/
 
-
-        *** https://developers.google.com/web/tools/lighthouse/ ***
+>Check list on your frontend tool
+>https://developers.google.com/web/tools/lighthouse/ ***
         Check list on your frontend tool
 
 
-        Set viewport
+#### Set viewport
         <meta name="viewport" content="with=device-width, initial-scale=1">
 
-                initial-scale=1 means 1:1 
-                so it will keep as it is on CSS
+         initial-scale=1 means 1:1 
+         so it will keep as it is on CSS
 
-                CSS allow content to overflow it's container
-                (Such as img overflow the size of div)
-                To prevent this set 
+         CSS allow content to overflow it's container
+         (Such as img overflow the size of div)
+         To prevent this set 
 
-                img, embed, object, video{
-                  max-width: 100%;
-                }
+         img, embed, object, video{
+           max-width: 100%;
+         }
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -43,27 +42,32 @@ The First step you take is Set to the small divice
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-=================================
-
-Use media query (@media screen)
-
-=================================
 
 
-Adding basic media query--------
-    <link rel="stylesheet" media="screen and (min-width: 500px)" href="yes.css">
+### Useing media query (@media screen)
+
+#### Adding basic media query
+
+    <link rel="stylesheet" media="screen and (min-width: 500px)" href="responsive500.css">
+    then straight add body{background-color: green;} on responsive500.css
+    
     or
+    
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+    then add below on responsive.css
     @media screen and (min-width: 500px){
         body{background-color: green;}
-    }
+    }    
+    
     https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_types
     
-    don't do it with @import tag - expensive / too many http request
-
+    don't do it with @import tag - expensive / too many http requests
     use max-width, min-width (according to blowser window)
+
+
+#### Break point 
     
-Break point -------------------
-    break point to change the size of written and etc:
+    break point to change the size of written and looking:
     
     example:
     725 minor break point
@@ -71,11 +75,11 @@ Break point -------------------
     960 break point - layout change
     1024 ads show up
     
-    where to put break point:
+    Where to put breakpoints:
     look at content 
     
-    step1: desk top to go - small as I get
-    slowly size up and see the lay out that where the content likes to have a break point
+    Step1: desk top to go - small as I get
+    slowly size up and see the layout that where the content likes to have a break point
     add link on head on each break point
    <link rel="stylesheet" media="screen and (min-width:550px)" 
     href = "medium-size.css"> 
