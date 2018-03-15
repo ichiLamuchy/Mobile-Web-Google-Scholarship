@@ -1,52 +1,65 @@
 
-## Start Small
+### Summary
+
+#### How To Make Responsive
+
+    1:  Set the device  as small as possible on Developer Tool
+    2:  Set viewport on Headder on index.html
+    3:  Make all width 100% if they are less than 100% fixed 
+        Tap area at least 48px
+        Check them on developer tool
+    4:  Make media quaries style sheet and link it on index file
+    5:  Find break point and see what it can be done
+    6:  Apply responsive pattens 
+    7:  Deal with table if you ahve one
+    8: check font size, too
+
+
+
+
+
+
+
+
+
+### 1: Start Small
 
 >Testing Web
 >http://udacity.github.io/RWDF-samples/quizzes/viewport-quiz/
 
 >Check list on your frontend tool
->https://developers.google.com/web/tools/lighthouse/ ***
-        Check list on your frontend tool
+>https://developers.google.com/web/tools/lighthouse/
 
 
-#### Set viewport
-        <meta name="viewport" content="with=device-width, initial-scale=1">
 
-         initial-scale=1 means 1:1 
-         so it will keep as it is on CSS
+### 2: Set viewport
 
-         CSS allow content to overflow it's container
-         (Such as img overflow the size of div)
-         To prevent this set 
+    <meta name="viewport" content="with=device-width, initial-scale=1">
 
-         img, embed, object, video{
-           max-width: 100%;
-         }
+     initial-scale=1 means 1:1 
+     so it will keep as it is on CSS
+
+     CSS allow content to overflow it's container
+     (Such as img overflow the size of div)
+     To prevent this set 
+
+     img, embed, object, video{
+       max-width: 100%;
+     }
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-The First step you take is Set to the small divice
-    1:  Set a view port
-    2:  Make all width 100% if they are less than 100% fixed 
-    3:  Tap area at least 48px
-    4:  Check on developer tool
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- Use media query (@media screen)
-    1: check each section which can move together and find break point
-    2: use width and order properties to move it arround
-    3: 
     
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
-### Useing media query (@media screen)
 
-#### Adding basic media query
+### 4: Useing media queries (@media screen)
+
+#### Adding basic media queries
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_types
 
     <link rel="stylesheet" media="screen and (min-width: 500px)" href="responsive500.css">
     then straight add body{background-color: green;} on responsive500.css
@@ -58,91 +71,60 @@ The First step you take is Set to the small divice
     @media screen and (min-width: 500px){
         body{background-color: green;}
     }    
-    
-    https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_types
-    
+       
     don't do it with @import tag - expensive / too many http requests
     use max-width, min-width (according to blowser window)
 
 
-#### Break point 
+### 5: Breakpoint 
     
-    break point to change the size of written and looking:
-    
+    break point to change the size of written font and appearnce:
+
     example:
     725 minor break point
     800 minor break point - nav menu will show up, hamburger will disappeared
     960 break point - layout change
     1024 ads show up
-    
+
     Where to put breakpoints:
-    look at content 
-    
-    Step1: desk top to go - small as I get
-    slowly size up and see the layout that where the content likes to have a break point
-    add link on head on each break point
-   <link rel="stylesheet" media="screen and (min-width:550px)" 
-    href = "medium-size.css"> 
-    
-    
+    Look at contents!
 
-Grid fluid system ==========================
-    Boot strap, 960 pixel grid layout system
+    Step1: Make it small as I get
+        Slowly size up and see the layout that where the content likes to have a breakpoint
+    add link on head on each breakpoint
     
-    Flexbox ------------
+    
+#### Grid fluid system 
+    Boot strap, 960 pixel grid layout system and etc
+    
+##### Flexbox
 
-    on container div add
-    display:flex;  // defalt fit on the single line
-    flex-wrap: wrap; // can go next row, only re-seize when really need to do.
-    css order attribute to change order
+    on <div> container add
+    
+    display:flex;       // defalt fit on the single line
+    flex-wrap: wrap;    // can go next row, only re-seize when really need to do.
+    
+    css "order" attribute to change order
         @media screen and (min-width: 500px){
-        header {width:100%; order:1;}
-        .blue{width:10%; order:4;}
-        .pink{width:90%; order:3;}
-        .green{width:40%; order:2;}
-        .orange{width:20%; order:5;}
+            header {width:100%; order:1;}
+            .blue{width:10%; order:4;}
+            .pink{width:90%; order:3;}
+            .green{width:40%; order:2;}
+            .orange{width:20%; order:5;}
          }
     
- 4 responsive patterns (L4)------------------------------
     
-    1: Mostly fluid ----
+### 6 Responsive patterns
     
-        below code can be on 1 sheet. Everything is just added onto original css file. 
-        all @media screen can be on the page
-        Only what you want to change (over write or add) will be on @media screen
-        
-            .container{
-                    disolay: flex;
-                    flew-wrap: wrap;
-                }
-            .box{
-                width: 100%;
-            }
-            @media screen and (min-width: 450px){
-                .dark_blue, .green {width:50%;}
-            }
-            @media screen and (min-width: 550px){
-                .dark_blue, .light_blue {width:25%;}
-                .green, .red, .orange {width:33.3333%;}
-            }
-            // the way to keep the margin after 800px width
-            @media screen and (min-width: 700px){
-                .container {width700px;
-                margin-left: auto;
-                margin-right: auto;
-             }
+    ***** Mostly fluid *****
+    
+    below code can be on 1 sheet. Everything is just added onto original css file. 
+    all @media screen can be on the page
+    Only what you want to change (overwrite or add) from the original CSS will be on @media screen
+    (Alternatively you can make separate CSS style sheet)
+         
+     Examples:
 
-
-    2: Column drop ----
-        
-        Vertically until first break point hits
-        
-        then next break point hits to change the shape
-        
-        Generally once the view port hits a maximum width, 
-        the columns hit a maximun size, and instead of getting wider,
-        margins are added to the left .nd right
-        
         .container{
             disolay: flex;
             flew-wrap: wrap;
@@ -150,73 +132,110 @@ Grid fluid system ==========================
         .box{
             width: 100%;
         }
-      
+
+        @media screen and (min-width: 450px){
+            .dark_blue, .green {width:50%;}
+        }
+        @media screen and (min-width: 550px){
+            .dark_blue, .light_blue {width:25%;}
+            .green, .red, .orange {width:33.3333%;}
+        }
+
+        *** the way to keep the margin after 800px width ***
+        @media screen and (min-width: 700px){
+            .container {width700px;
+            margin-left: auto;
+            margin-right: auto;
+         }
+
+
+    ***** Column drop *****
+
+    Vertically until first break point hits
+
+    then next breakpoint hits to change the shape
+
+    Generally once the view port hits a maximum width, 
+    the columns hit a maximun size, and instead of getting wider,
+    margins are added to the left and right
+
+        .container{
+            disolay: flex;
+            flew-wrap: wrap;
+        }
+        .box{
+            width: 100%;
+        }
+
         // if the vp changed >= 450px
         @media screen and (min-width: 450px){
             .dark_blue {width:25%;}
             .light_blue {width:75%;}
         }
+
         @media screen and (min-width: 550px){
             .dark_blue, .green {width:25%;}
             .light_blue {width:75%;}
         }
-    
-    3: Layout shifter ----
-    
+
+    ***** Layout shifter *****
+
         using order attribute. moving the place around.
         set 
             width: and order:
         you can set negative number too
         default start from 0
-          
-    4: off canvas 
-    https://classroom.udacity.com/nanodegrees/nd024/parts/0bf842e9-7269-42de-b68b-812ca7823517/modules/e08f25bf-f172-4fb8-9812-b09ca908ae37/lessons/3561069759/concepts/35307193050923
-    off screan content is only comes in when width is big enough
-    
-    example of side nav :
-    https://www.w3schools.com/howto/howto_js_sidenav.asp
-        // JS
-        menu.addEventListener('click', function(e) {
-            drawer.classList.toggle('open');
-            e.stopPropagation();
-        });
-        // CSS
-        nav {
-          width: 300px;
-          position: absolute;
-          /* This trasform moves the drawer off canvas. */
-          -webkit-transform: translate(-300px, 0);
-          transform: translate(-300px, 0);
-          /* Optionally, we animate the drawer. */
-          transition: transform 0.3s ease;
-        }
-        nav.open {
-          -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-        }
-      
-      
-  ------------the way it works (for me)-----------------------------------------------------
+
+    Off canvas:
+    for NAV
+
+        https://classroom.udacity.com/nanodegrees/nd024/parts/0bf842e9-7269-42de-b68b-812ca7823517/modules/e08f25bf-f172-4fb8-9812-b09ca908ae37/lessons/3561069759/concepts/35307193050923
+        off screan content is only comes in when width is big enough
+
+        example of side nav :
+        https://www.w3schools.com/howto/howto_js_sidenav.asp
+            // JS
+            menu.addEventListener('click', function(e) {
+                drawer.classList.toggle('open');
+                e.stopPropagation();
+            });
+            // CSS
+            nav {
+              width: 300px;
+              position: absolute;
+              /* This trasform moves the drawer off canvas. */
+              -webkit-transform: translate(-300px, 0);
+              transform: translate(-300px, 0);
+              /* Optionally, we animate the drawer. */
+              transition: transform 0.3s ease;
+            }
+            nav.open {
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+
+
+### The way it works (for me) Of Responsive Pattern
   
   
-  1: to CSS main
+#### 6-1: to CSS main
   
-      1. look the web site
+      1. look the website
       2. find any segment can be moved together - normally where wrapped in <section> tag
         give is flow-glow attribute to main css (smallest width first)
       3. Make sure to set width 100% to all section (hopefully separately) 
       4. add some padding if necessary
   
-  2: to index.html
-      1. this is burger menu svg
+#### 6-2: to index.html
+      1. this is hamburger menu svg
         <a id="menu" class="header__menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
           </svg>
         </a>
         
-3: to response CSS file
-        1. on the top
+#### 6-3: to response CSS file
+       1. on the top
 
             .content {
               display: flex;
@@ -266,7 +285,7 @@ Grid fluid system ==========================
               }
             }
 
-        3: to the each break point add order attribute and width on the  each section
+        3: to the each breakpoint add "order" attribute and "width" on the each section
         where flow-glow attribute presented
 
             <script>
@@ -303,23 +322,21 @@ Grid fluid system ==========================
               }
 
 
-====================================
-get image Responsive
+#### Resauce
+    get image Responsive
 
-check out
+check out:
 https://classroom.udacity.com/courses/ud882
 
-=====================================
-
-====================================================================
-tables
+tables:
 https://www.thoughtco.com/display-none-vs-visibility-hidden-3466884
-(display:none and visibility: hidden )
-https://css-tricks.com/responsive-data-table-roundup/
-(table data tricks)
-=====================================================================
 
-What to do with tables - 3 ways
+Table Dable Tricks:
+https://css-tricks.com/responsive-data-table-roundup/
+
+
+
+### 7: What to do with tables - 3 ways
 
 1. hiden columns
        check what is the most important ones to show
@@ -355,9 +372,9 @@ What to do with tables - 3 ways
         overflow-x: auto;
     }
     
- ==================================
- Font reading
- ==================================
+
+### 8: Font reading
+
  
  ideal measure is 45-90cpl
  pretty solid consensus around 65 cpl for web
