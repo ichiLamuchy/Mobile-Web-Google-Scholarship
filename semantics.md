@@ -8,7 +8,8 @@ Technologies rely on programmatically expressed semantics to create an accessibl
     is an umbrella term for devices, software, and tools that help any person with a disability complete a task
 
 #### An affordance 
-    is any object that offers, or affords, its user the opportunity to perform an action. The better the affordance is designed, the more obvious or intuitive its use.
+    is any object that offers, or affords, its user the opportunity to perform an action. 
+    The better the affordance is designed, the more obvious or intuitive its use.
 
   Web AIM WCAG 2.0 Checklist 4.1.2
 
@@ -76,14 +77,17 @@ https://webaim.org/techniques/alttext/
 #### Voice Over (screen reader) on Mac (since OSX 10)
         https://webaim.org/articles/nvda/
         https://webaim.org/articles/voiceover/
-    
-### heading h1 h2 h3 h4 h5 h6
+ 
+ 
+ 
+ 
+### Heading h1 h2 h3 h4 h5 h6
 
-1.3.2: http://webaim.org/standards/wcag/checklist#sc1.3.2
-2.4.10: http://webaim.org/standards/wcag/checklist#sc2.4.10
-1.3.1: http://webaim.org/standards/wcag/checklist#sc1.3.1
-2.4.1: http://webaim.org/standards/wcag/checklist#sc2.4.1
-2.4.6: http://webaim.org/standards/wcag/checklist#sc2.4.6
+    1.3.2: http://webaim.org/standards/wcag/checklist#sc1.3.2
+    2.4.10: http://webaim.org/standards/wcag/checklist#sc2.4.10
+    1.3.1: http://webaim.org/standards/wcag/checklist#sc1.3.1
+    2.4.1: http://webaim.org/standards/wcag/checklist#sc2.4.1
+    2.4.6: http://webaim.org/standards/wcag/checklist#sc2.4.6
      
      Heading level
      
@@ -157,7 +161,7 @@ https://webaim.org/techniques/alttext/
             <img alt="Udacity" src="logo_wordmark.svg">
         </a>
         
-### learn more 
+### Learn more 
 
     often use as the end of article, you can change to
 
