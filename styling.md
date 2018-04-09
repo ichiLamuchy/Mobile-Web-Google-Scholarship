@@ -1,5 +1,5 @@
 
-## Style
+## Style 
 
 After accessibility applied - make it look good but not confict with accessibility
 
@@ -112,7 +112,7 @@ After accessibility applied - make it look good but not confict with accessibili
     https://github.com/alice/modality
 
 
-### style with Aria
+### Style with Aria
 
     css atribute selector
 
@@ -163,14 +163,14 @@ After accessibility applied - make it look good but not confict with accessibili
 
 
 
-### setting accessability on iphone
+### Setting accessability on iphone
     
     go to general setting
     tap accessability
     turn voice over on
 
 
-### color contrast
+### Color contrast
 
     contrast ration higher is better. minimum 4.5:1 is recommended
 
@@ -200,14 +200,14 @@ After accessibility applied - make it look good but not confict with accessibili
     http://www.colourblindawareness.org/colour-blindness/
     color blind awearness site
 
-### high contrast
+### High contrast
 
-high contrast extention
-https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en
+    High contrast extention
+    https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en
 
-MAc OSX has accessability setting
+    Mac OSX has accessability setting
 
-check your web using high contrast extention, still the user can experience your website
+    check your web using high contrast extention, still the user can experience your website
 
 
 =========NEXT PROJECT================
