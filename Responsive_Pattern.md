@@ -3,7 +3,7 @@
 
 #### How To Make Responsive
 
-    1:  Set the device  as small as possible on Developer Tool
+    1:  Set the device as small as possible on Developer's Tool
     2:  Set viewport on Headder on index.html
     3:  Make all width 100% if they are less than 100% fixed 
         Tap area at least 48px
@@ -12,7 +12,7 @@
     5:  Find break point and see what it can be done
     6:  Apply responsive pattens 
     7:  Deal with table if you ahve one
-    8: check font size, too
+    8:  check font size, too
 
 
 
@@ -215,16 +215,16 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_types
             }
 
 
-### The way it works (for me) Of Responsive Pattern
+### The way it works (for me) on Responsive Pattern
   
   
 #### 6-1: to CSS main
   
-      1. look the website
-      2. find any segment can be moved together - normally where wrapped in <section> tag
+      1. Look the website
+      2. Find any segment can be moved together - normally where wrapped in <section> tag
         give is flow-glow attribute to main css (smallest width first)
       3. Make sure to set width 100% to all section (hopefully separately) 
-      4. add some padding if necessary
+      4. Add some padding if necessary
   
 #### 6-2: to index.html
       1. this is hamburger menu svg
@@ -251,6 +251,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_types
             }
 
         2: first media query is tidy up header bit - logo, title, nav
+            
             This is the example
             .nav {
                 z-index: 10;
@@ -338,54 +339,54 @@ https://css-tricks.com/responsive-data-table-roundup/
 
 ### 7: What to do with tables - 3 ways
 
-1. hiden columns
-       check what is the most important ones to show
-       put display: none for all others
-       
+    1. hiden columns
+           check what is the most important ones to show
+           put display: none for all others
 
-3. no more tables 
-        1: 
-            table, thread, tbody, th, td, tr{
-                display: block;
+
+    2. no more tables 
+            1: 
+                table, thread, tbody, th, td, tr{
+                    display: block;
+                }
+            2: hide table header instead of display none, just keep it way off screen
+                thread tr {
+                    position: absolute;
+                    top: 9999px;
+                    left: -9999px
+                }
+            3: just add padding and set the position relative to td
+            4: 
+            td:before{
+                    position: absolute;
+                    left: 6px;
+                    content: attr(data-th);// pull the data element of each of td elements
+                    front-weight bold;
+                }
             }
-        2: hide table header instead of display none, just keep it way off screen
-            thread tr {
-                position: absolute;
-                top: 9999px;
-                left: -9999px
-            }
-        3: just add padding and set the position relative to td
-        4: 
-        td:before{
-                position: absolute;
-                left: 6px;
-                content: attr(data-th);// pull the data element of each of td elements
-                front-weight bold;
-            }
+
+    3. contained tables
+
+        wrap in the div "contained_table"
+        div>contained_table{
+            width: 100%
+            overflow-x: auto;
         }
 
-3. contained tables
-
-    wrap in the div "contained_table"
-    div>contained_table{
-        width: 100%
-        overflow-x: auto;
-    }
-    
 
 ### 8: Font reading
 
  
- ideal measure is 45-90cpl
- pretty solid consensus around 65 cpl for web
+    ideal measure is 45-90cpl
+    pretty solid consensus around 65 cpl for web
  
- set at least 
- font-size:18 px
- line height: 1.25em
+    set at least 
+    font-size:18 px
+    line height: 1.25em
  
-  minor break point 
-  adding padding 
-  make font size bigger for easier to read
+    minor break point 
+    adding padding 
+    make font size bigger for easier to read
  
  
  
