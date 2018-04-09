@@ -1,32 +1,33 @@
-=======================
- Accessibility
+
+ ## Accessibility
  repo: https://github.com/udacity/ud891
-=======================
-
-Easier to read,
-it makes sense
-Good contrast for read
-
-Visual impairment:
-need - Sound, navigate through key boad, large print, color contrast, screen reader
-
-Minor or dexterity impairments
-They use only key boad, eye tracking software, twitches, voice dictation
-
-Hearing impairments:
-i.e, messenger app could provide flash alart as well as sound nortification
-
-Cognitive impairment : ADD Dyslecxia, autism
-zoom in to easier to read, minimul design
 
 
-ChromeVox Lite
-  munimal functional screen reader
+    Easier to read,
+    It makes sense
+    Good contrast for read
+
+    Visual impairment:
+        Need - Sound, navigate through key boad, large print, color contrast, screen reader
+
+    Minor or dexterity impairments
+         They use only key boad, eye tracking software, twitches, voice dictation
+
+    Hearing impairments:
+        i.e, messenger app could provide flash alart as well as sound nortification
+
+    Cognitive impairment : ADD Dyslecxia, autism
+        Zoom in to easier to read, minimul design
+
+
+#### Tools to check accessibility
+    ChromeVox Lite
+        munimal functional screen reader
   
-WACAG
+#### WACAG
     https://www.w3.org/TR/WCAG20/
     
-    Checklist for WACAG ++++++++++++++++++++++++++++
+    * Checklist for WACAG
     https://webaim.org/standards/wcag/checklist
     
     POUR:
@@ -36,16 +37,15 @@ WACAG
     Robust
 
 
---------------------------------------------------------------------------------
+#### Focus on Key board
+    Sementics
+    Styling
 
-Focus on Key board ===========================================================
-Sementics
-Styling
+    Should alays accesable by keyboard
 
-Should alays accesable by keyboard
-
-tab order
-https://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tabindex-attribute
+#### tab order
+    https://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tabindex-attribute
+    
     Be careful with CSS
         Form tag can be used key board based on the posion on the DOM
         So even using css to float: right; on the first item which visually shows the last visually on brower
@@ -66,7 +66,11 @@ https://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tab
         anti-pattern
         confusing to screen reader
 
-    ++tab is for something user will be interactive
+    tab is for something user will be interactive
+    
+        The tabindex global attribute indicates if its element can be focused, 
+        and if/where it participates in sequential keyboard navigation (usually with the Tab key, hence the name). 
+        It accepts an integer as a value, with different results depending on the integer's value:
     
     managing focus
     
@@ -122,14 +126,13 @@ https://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tab
             page({
               hashbang: true
             });
-        -------------------------------------------------------------
-        ===================================================================================
+       
+       
         The actual contents is not the first things on DOM
         tab goes throug nav and side bar first and it is frastrating eith motor imperiment.
 
         Skip links
         https://developers.google.com/web/updates/2016/03/focus-start-point?hl=en
-        ============================================================================================    
                 
             when you tab first, it will give you an option if you wanna skip to the content
             press enter, you move down to content area. bypassing all the navigation.
@@ -159,7 +162,7 @@ https://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tab
                 }
 
 
-            Focus on comprex contents ----------------------------------
+        * Focus on comprex contents -------
 
             AREA design pattern stock
             https://www.w3.org/TR/wai-aria-practices-1.1/
@@ -167,71 +170,68 @@ https://www.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tab
             i.e. radio buttons
             https://www.w3.org/TR/wai-aria-practices-1.1/examples/radio/radio-1/radio-1.html
 
-            Roving focus ------------------------------------------------
-                <li tabindex="0" checked
-                <li tabindex="-1">
-                <li tabindex="-1">
-                <li tabindex="-1"> 
-                <li tabindex="-1">
+         * Roving focus ------------------------------------------------
+            <li tabindex="0" checked
+            <li tabindex="-1">
+            <li tabindex="-1">
+            <li tabindex="-1"> 
+            <li tabindex="-1">
 
-                0 on the currently active item
-                keyboad event listner to determine which key user has pressed
-                it will set tabindex to 0, the previous one to -1
-                attach focus method()
-                move checked attribute to the new list
-                this change the looks of the (radio button) on browser
-                https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/05-radio-group/solution/radiogroup.js
+            0 on the currently active item
+            keyboad event listner to determine which key user has pressed
+            it will set tabindex to 0, the previous one to -1
+            attach focus method()
+            move checked attribute to the new list
+            this change the looks of the (radio button) on browser
+            https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/05-radio-group/solution/radiogroup.js
 
-                    RadioGroup.prototype.handleKeyDown = function(e) {
-                        switch(e.keyCode) {
+        RadioGroup.prototype.handleKeyDown = function(e) {
+            switch(e.keyCode) {
+                case VK_UP:
+                case VK_LEFT: }
+                 e.preventDefault();
 
-                          case VK_UP:
-                          case VK_LEFT: {
+                if (this.focusedIdx === 0) {
+                    this.focusedIdx = this.buttons.length - 1;
+                } else {
+                    this.focusedIdx--;
+                }
+                break;
+                }
 
-                            e.preventDefault();
+              case VK_DOWN:
+              case VK_RIGHT: {
 
-                            if (this.focusedIdx === 0) {
-                              this.focusedIdx = this.buttons.length - 1;
-                            } else {
-                              this.focusedIdx--;
-                            }
-                            break
-                          }
-
-                          case VK_DOWN:
-                          case VK_RIGHT: {
-
-                            e.preventDefault();
-                            if (this.focusedIdx === this.buttons.length - 1) {
-                              this.focusedIdx = 0;
-                            } else {
-                              this.focusedIdx++;
-                            }
-                            break;
-                          }
-                        }
-
-                        this.changeFocus(this.focusedIdx);
-                      };
+                e.preventDefault();
+                if (this.focusedIdx === this.buttons.length - 1) {
+                  this.focusedIdx = 0;
+                } else {
+                  this.focusedIdx++;
+                }
+                break;
+              }
+            }
+            this.changeFocus(this.focusedIdx);
+          };
 
 
-                off screen content ------------------------------------
+        * Off screen content -----
 
-                if the focus disappeared, write
-                document.activeElement on colsole on console
-                gives you apparet focus element
-                https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement
+            if the focus disappeared, write
+            document.activeElement on colsole on console
+            gives you apparet focus element
+            https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement
 
-                accessibility Developer Tools --------------------------
+        * Accessibility Developer Tools -----
 
-                https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en
+            https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en
 
                 Audit tab on the tool  
                 click accessibitity and Audit present state
                 then it will produce number of errors
                 including items are focusable but either invisible or obscured by another emements
                 as well as the off screen menu like hidde under burger
-                HOw to fix it:
+                How to fix it:
                     visibility: hidden
                     or
                     display: none
