@@ -1,4 +1,4 @@
-## This is norte for tackling this project mws-restaurant-stage-1
+## This is note for tackling this project mws-restaurant-stage-1
 
 1: as readme asked use python to connect the server to see how it look like
 2: follow the step to code up so the all function works
