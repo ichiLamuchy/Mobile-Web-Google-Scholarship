@@ -7,7 +7,7 @@ for exercise
 
 
   For accesibility:
-      ++++++++++++++++
+     
         DOM order
         Focus
         Keyboad
@@ -16,7 +16,7 @@ for exercise
         Heading
         Landmaeks
         Links
-      +++++++++++++++++
+      
       
 
 How to express semantics HTML cannot express
@@ -109,15 +109,6 @@ https://www.w3.org/TR/wai-aria-practices-1.1/
             even if there are area-label or class attribute there, 
             aria-labelledby will always take precedence.
             
-#### aria-describedby
-        Exactly the same as labelled by allows you toprovide a label
-        this is useful if there is nany explanatory text
-        supplimentary not essenially 
-        
-![aria-describedby](https://github.com/ichiLamuchy/Mobile-Web-Google-Scholarship/blob/master/img/aria-describedby.png)
-        
-        
-        
      
         HTML sementics (area in HTML)
         
@@ -136,7 +127,9 @@ https://www.w3.org/TR/wai-aria-practices-1.1/
         role = "dialogue"
         role = "complementaty"
         role = "contentinfo"
-      
+ 
+### ARIA RELATIONSHIPS
+https://www.w3.org/TR/wai-aria-1.1/#attrs_relationships
 #### aria-owns for menu
         
         <div role = 'menu" aria-owns="mi1 
