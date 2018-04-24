@@ -85,7 +85,42 @@ Here's the code that I'm using:
 
 ### Handling Errors
 
-Issues with the network
-Issues with the fetch request
-Unsplash not having an image for the searched term
+    Issues with the network
+    Issues with the fetch request
+    Unsplash not having an image for the searched term
+
+    fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+        headers: {
+            Authorization: 'Client-ID abc123'
+        }
+    }).then(response => response.json())
+    .then(addImage)
+    .catch(e => requestError(e, 'image'));
+
+    function addImage(data) {
+        debugger;
+    }
+
+    function requestError(e, part) {
+        console.log(e);
+        responseContainer.insertAdjacentHTML('beforeend', `<p class="network-warning">Oh no! There was an error making a request for the ${part}.</p>`);
+    }
     
+    
+ # Ondexdb
+ 
+ wenplat form has hata base valled indexdb
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+# 
