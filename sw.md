@@ -1,46 +1,46 @@
 ### SW for Restaurant-APP-Project_1
 
 
-const version= '7';
-const reviewCacheName = "restaurant-v" + version;
-const dynamicCacheName = "d-restaurant-v" + version;
-const staticFiles = [
-    "/",
-    "index.html",
-    "restaurant.html",
-    "css/styles.css",
-    "data/restaurants.json",
-    "js/dbhelper.js",
-    "js/restaurant_info.js",    
-];
+    const version= '7';
+    const reviewCacheName = "restaurant-v" + version;
+    const dynamicCacheName = "d-restaurant-v" + version;
+    const staticFiles = [
+        "/",
+        "index.html",
+        "restaurant.html",
+        "css/styles.css",
+        "data/restaurants.json",
+        "js/dbhelper.js",
+        "js/restaurant_info.js",    
+    ];
 
-// install
-self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(reviewCacheName).then((cache) => {
-            return cache.addAll(staticFiles);
-        })
-    );
-});
+    // install
+    self.addEventListener("install", (event) => {
+        event.waitUntil(
+            caches.open(reviewCacheName).then((cache) => {
+                return cache.addAll(staticFiles);
+            })
+        );
+    });
 
  
-// activate 
-self.addEventListener('activate', function(event) {
-    event.waitUntil(
-      caches.keys().then ((cacheNames)=>{
-        return Promise.all (
-          cacheNames.filter((cacheName)=>{
-          return cacheName != reviewCacheName;
-          }).map(function (cacheName){
-            return caches.delete(cacheName);
+    // activate 
+    self.addEventListener('activate', function(event) {
+        event.waitUntil(
+          caches.keys().then ((cacheNames)=>{
+            return Promise.all (
+              cacheNames.filter((cacheName)=>{
+              return cacheName != reviewCacheName;
+              }).map(function (cacheName){
+                return caches.delete(cacheName);
+              })
+            )  
           })
-        )  
-      })
-    );
-  });
- 
+        );
+      });
 
-self.addEventListener('fetch', function(event) {
+
+    self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request)
         .then(function(response) {
