@@ -33,12 +33,7 @@ ALT and drag - not really use
 
 Gulp focus on code 
 Grunt focus on configuration
-
 Gulp is speedy!
-
-example (refer code on set up)
-gulp style 
-to generate new css style created and dropped in the correct folder
 
 THIS SERIES 3 PARTS ARE GOOD
 https://www.youtube.com/watch?v=mCW3Q28QXIs
@@ -56,14 +51,6 @@ of the same file on your computer.
 
 https://developers.google.com/web/tools/chrome-devtools/workspaces/
 
-browser sync
-https://www.browsersync.io/
-
-
-note: Globally installed so far
-
-  gulp
-  browser sync
   
 
 ## Prevent disasters
@@ -83,12 +70,7 @@ it checks
 
 populer ones are JSHint, JSCS, ESLint
 
-### Unit Test
 
-Phantom JS - it's basically headless version of web kit
-gilp jusmine-phantom plugin used that to its advantage 
-to actuallu runyour test in a real browser test env
-https://www.npmjs.com/package/gulp-jasmine-phantom
 
 ### Continuous Intergration in Cloud
 
@@ -96,10 +78,22 @@ Really good need to watch through
 https://classroom.udacity.com/courses/ud611
 
 ### Development and Production Modes
-
 Split development and production modes
 
+#### How to enable the root user on your Mac
+https://support.apple.com/en-gb/HT204012
 
+#### gulp-sass
+create folder called sass
+then move all css file to extention .scss
+
+#### eslint
+https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+top of the gulp file
+you can set * eslin-env node */
+this type of special comment works like configlration but it's local to current file
+ see on https://www.npmjs.com/package/gulp-eslint
 
 
 
@@ -163,66 +157,66 @@ Split development and production modes
                 }));
         });
 
-### Set up Gulp
+## Gulp follow this to pull all plug in and make gulp.file
 
-Gulp https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
+--save 
+adds the package to your dependency list ("dependencies" in package.json). 
+This is a list of only the dependencies that your package needs to run. 
+These are the dependencies that need to be installed when a user installs 
+your package from npm with the intent of using it.
 
-How to enable the root user on your Mac
-https://support.apple.com/en-gb/HT204012
+--save-dev 
+adds the package to your developer dependency list ("devDependencies" in package.json). 
+This is a list of dependencies that you need only for developing the package. Examples would be like babel, gulp, a testing framework, etc.
 
+#### npm install --global gulp-cli
+start gulp
+https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
 
+#### npm init
+initialise so packahe.json will be created
 
-### Set up gulp-sass
+#### npm install --save-dev gulp@next
+? (just first gulp set up)
 
-npm install gulp-sass
+#### npm install gulp-sass --save-dev
+Set up gulp-sass
 http://sass-lang.com/
-create folder called sass
-then move all css file to extention .scss
+https://www.npmjs.com/package/gulp-sass
 
-
-### Set up gulp-autoprefixer
+#### $ npm install --save-dev gulp-autoprefixer
 https://www.npmjs.com/package/gulp-autoprefixer
 
-$ npm install gulp-autoprefixer
-https://www.npmjs.com/package/gulp-autoprefixer
-
-
-### Set up browserSync
+#### npm install -g browser-sync
+Live editing
 https://www.browsersync.io/
 
-npm install -g browser-sync
+#### npm install gulp-eslint
+Linting
+https://www.npmjs.com/package/gulp-eslint
 
-
-### Set up ES lint
-
-        install 
-
-        npm install eslint
-
-        npm install -g eslint  (may require sudo)
-
-
-        eslint --init 
-
-https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-
-
-top of the gulp file
-you can set * eslin-env node */
-this type of special comment works like configlration but it's local to current file
-
-        see on https://www.npmjs.com/package/gulp-eslint
-
-
-### Lint precommit hooks
-
-### Set up Unit Test
-
+#### $ npm install --save-dev gulp-jasmine-phantom
+Unit test
 fiest install phantom JS
 http://phantomjs.org/
 then 
 install gulp-jasmine-phantom
 https://www.npmjs.com/package/gulp-jasmine-phantom
+
+## Development and Production Mode
+check if any can be imlay to project 2
+
+## sass minification and concat
+check code and need @import
+
+#### npm install gulp-concat
+JS concat - check through
+gulp styles to generate new css style created and dropped in the correct folder dist/css/
+Code for browser-sync to listen to change in index.html
+- dont really know what it means
+
+
+
 
 
 # Awsome optimisation
