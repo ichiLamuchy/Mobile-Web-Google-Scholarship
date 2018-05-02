@@ -10,7 +10,6 @@
     2: Change the data source for your restaurant requests to pull JSON from the server, 
     parse the response and use the response to generate the site UI.
     
-            ? helper js onto html page ?
 
     3: Cache the JSON responses for offline use by using the IndexedDB API.
 
@@ -46,58 +45,30 @@ using the Audit tab of Chrome Dev Tools.
     Accessibility score should be at 90 or better.
 
 
-## Gulp Hollow this to pull all plug in and make gulp.file
+#### Tip
+    When you wanna see json data in formated
+    go to developer's tool, go to console, then write such as
+    json = <then paste the json data> then you see it in the formated way
+    
+    manifest
+    for app - manifest fil will be read when it opens in the browser
+    if it opens a couple - a few times, the browser ask for if you woul like to down load app
+    https://app-manifest.firebaseapp.com/
+    
+    console on developer's tool
+    use such as fetch(http://localhotst:1337/restaurants")
+    .then (res=>res.json())
+    .then (json=>json)    
+    so you can see the result 
+    
+    on the fetch on sw
+    check if I can break down more
+    
+### `npm i -g serve` to install server 
+Now I can use `serve -p 8000 -o` to listen to port 8000
 
---save 
-adds the package to your dependency list ("dependencies" in package.json). 
-This is a list of only the dependencies that your package needs to run. 
-These are the dependencies that need to be installed when a user installs 
-your package from npm with the intent of using it.
+At the moment web application is using port 8000 / getting Json data from port 1337
 
---save-dev 
-adds the package to your developer dependency list ("devDependencies" in package.json). 
-This is a list of dependencies that you need only for developing the package. Examples would be like babel, gulp, a testing framework, etc.
-
-#### npm install --global gulp-cli
-start gulp
-https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-
-#### npm init
-initialise so packahe.json will be created
-
-#### npm install --save-dev gulp@next
-? (just first gulp set up)
-
-#### npm install gulp-sass --save-dev
-Set up gulp-sass
-http://sass-lang.com/
-https://www.npmjs.com/package/gulp-sass
-
-#### $ npm install --save-dev gulp-autoprefixer
-https://www.npmjs.com/package/gulp-autoprefixer
-
-#### npm install -g browser-sync
-Live editing
-https://www.browsersync.io/
-
-#### npm install gulp-eslint
-Linting
-https://www.npmjs.com/package/gulp-eslint
-
-#### $ npm install --save-dev gulp-jasmine-phantom
-Unit test
-
-
-## Development and Production Mode
-check if any can be imlay to project 2
-
-## sass minification and concat
-check code and need @import
-
-#### npm install gulp-concat
-JS concat - check through
-gulp styles to generate new css style created and dropped in the correct folder dist/css/
-Code for browser-sync to listen to change in index.html
-- dont really know what it means
+    
 
 
