@@ -84,15 +84,28 @@ At the moment web application is using port 8000 / getting Json data from port 1
 
 ### Steps for index db in this project
 
-use inport idb from 'idb';
+use inport idb from 'idb'; idb pollyfield  
 Task: Cache the JSON responses for offline use by using the IndexedDB API.
 
 The json is details for the restaurants 
 
+openDataBase Function
+1 creating promise for database by opening the data base
+2 create object store 
+3 detaermine what to store (restaurant details)
+4 define key (id) and define indexed by if necessary
 
-1 creating promise for data base by opening
-2 make function to pass the data from network and store in indexed db
-use socket
+openSocket Function
+5 Parse the Json received then store in object sore, 
+it shoud happen fetchRestaurant function
+indexController._onsocketMessage on witter.
+is where JASON.parse
+
+showRestaurant function
+6 call openSocket function within to show the restaurant
+7 get restaurant details from the object store then possibly send to another function 
+such as show post restrantinfo.js and mainjs?
+
 
 Logic, 
 browser get the skelton static from cache through service worker.
@@ -103,7 +116,12 @@ Browser update the contents to indexed db when the contents arrived
 (you need indexController.js for all the display this incluse 
 regesterServiceWorker, event listeniner such as listening to websocket, pass it to json)
 
+#### Tip
 
+method indexdDB.deleteDatabase('database name')
+on the colsole dev tools to delete the indexedDB
+
+force update on reload check on dev tools - easier to develop
 
 
 
