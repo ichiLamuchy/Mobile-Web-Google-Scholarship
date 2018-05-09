@@ -1,3 +1,13 @@
+#### Server usage
+    on mws-restaurant-stage-2 (use bash)
+    # node server
+    on mws-restaurant-stage-1 (use terminal on vs code)
+    serve -p 8000 -o
+    
+
+
+
+
 
 ### project 2 steps
 
@@ -72,3 +82,34 @@ At the moment web application is using port 8000 / getting Json data from port 1
     
 
 
+### Steps for index db in this project
+
+use inport idb from 'idb';
+Task: Cache the JSON responses for offline use by using the IndexedDB API.
+
+The json is details for the restaurants 
+
+
+1 creating promise for data base by opening
+2 make function to pass the data from network and store in indexed db
+use socket
+
+Logic, 
+browser get the skelton static from cache through service worker.
+But updated dynamic contents from indexed db
+Open websocket to get updated contents from network (by pass http cache and sw)
+Browser update the contents to indexed db when the contents arrived
+
+(you need indexController.js for all the display this incluse 
+regesterServiceWorker, event listeniner such as listening to websocket, pass it to json)
+
+
+
+
+
+  Basic steps:
+  1.Get data from ide.open                  - step 1
+  2.Open transaction on database            - step 2
+  3.Open object store on transaction        - step 2
+  4.Optionally open index on object store
+  5.Perform operation on object store or index
