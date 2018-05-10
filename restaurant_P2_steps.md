@@ -4,7 +4,16 @@
     on mws-restaurant-stage-1 (use terminal on vs code)
     serve -p 8000 -o
     
+### RESTAURANT APP analysis
 
+    INDEX.JS
+        when it loaded 
+        fetchNeigberhood() is called which originally come from DBHelper
+        fetchCuisins() is called which originally come from DBHelper
+        Both functions use fetchRestaurants() in DBHelper
+        which fetch the text from server 1337, purse the text (restaurants) to object by using .json()
+
+    All the functions in restaurant_info.js are also reading datas from fetchRestaurants
 
 
 
@@ -28,21 +37,18 @@
 
     4: Submit your project code for review.
 
-So two main things
+    So main things
 
-  1: Change to Use server data instead of local memory 
-  by use fetch API.
-  2: Use IndexedDB to cache JSON responses
-  3: accessability retained as it is
-  4: check performance using lighthouse
-  
-  rubricks:
-  https://review.udacity.com/#!/rubrics/1131/view
+      1: Change to Use server data instead of local memory 
+      by use fetch API.
+      2: Use IndexedDB to cache JSON responses
+      3: accessability retained as it is
+      4: check performance using lighthouse
+
+      rubricks:
+      https://review.udacity.com/#!/rubrics/1131/view
 
 
-
-You can audit your site's performance with Lighthouse by 
-using the Audit tab of Chrome Dev Tools.
 
 #### Lighthouse:
     You can audit your site's performance with Lighthouse by 
@@ -55,7 +61,7 @@ using the Audit tab of Chrome Dev Tools.
     Accessibility score should be at 90 or better.
 
 
-#### Tip
+#### Tip !
     When you wanna see json data in formated
     go to developer's tool, go to console, then write such as
     json = <then paste the json data> then you see it in the formated way
@@ -83,23 +89,65 @@ At the moment web application is using port 8000 / getting Json data from port 1
 
 
 ### Steps for index db in this project
+https://developers.google.com/web/ilt/pwa/working-with-indexeddb
+        
+        // make a function called newFetchR for indexed db
+        
+        // if sw not exist, don't bother and error out
+        // if it does
+        // open indexed db restaurant_app
+        // callback with parameter (upgradeDB) to create object store called restaurants
+        // it would throw error if the name of the object store exists
+        
+       
+            if (!upgradeDb.objectStoreNames.contains('firstOS')) {
+                upgradeDb.createObjectStore('firstOS');
+            }
+        
+        // make keypath : id
+        
+        // make db.transacton to transactonable for read write
+        // get the restaurants object store from the db. transaction
+        // add or pu t  write onto the db.
+        
+        // when the network requests happen, the browser try to read it form indexed.db 
+        for the contents of restaurants which are all handked in the js
+       
+       
+
+        // this would be called if sw is not existed or any of fetch fall back
+        static fetchRestaurants(callback) {
+            fetch("http://localhost:1337/restaurants")
+              .then(resp => resp.json())
+              .then(json => callback(null, json))
+              .catch(err => callback(err, null))
+          }
 
 use inport idb from 'idb'; idb pollyfield  
 Task: Cache the JSON responses for offline use by using the IndexedDB API.
 
 The json is details for the restaurants 
 
-openDataBase Function
+If sw is not there, don't bother using indexedDB
 1 creating promise for database by opening the data base
-2 create object store 
-3 detaermine what to store (restaurant details)
-4 define key (id) and define indexed by if necessary
+
+2 within open database function create object store and name it
+
+4 define keypath (id) 
 
 openSocket Function
 5 Parse the Json received then store in object sore, 
 it shoud happen fetchRestaurant function
-indexController._onsocketMessage on witter.
-is where JASON.parse
+    
+    
+    
+        // this would be called if sw is not existed or any of fetch fall back
+        static fetchRestaurants(callback) {
+            fetch("http://localhost:1337/restaurants")
+              .then(resp => resp.json())
+              .then(json => callback(null, json))
+              .catch(err => callback(err, null))
+          }
 
 showRestaurant function
 6 call openSocket function within to show the restaurant
@@ -107,14 +155,27 @@ showRestaurant function
 such as show post restrantinfo.js and mainjs?
 
 
-Logic, 
-browser get the skelton static from cache through service worker.
+
+
+### How to use indexed DB
+Browser can get the Skelton static from cache through service worker.
 But updated dynamic contents from indexed db
 Open websocket to get updated contents from network (by pass http cache and sw)
 Browser update the contents to indexed db when the contents arrived
 
-(you need indexController.js for all the display this incluse 
-regesterServiceWorker, event listeniner such as listening to websocket, pass it to json)
+### Fetch When do you use it
+
+fetch is use for making network request similar to http request.
+it use promise.
+
+promise 
+synchronise behavior of request / response
+
+So simply when you use it is some thing need to be updated while it has been
+ chached in between origin and browser
+ 
+ or need to display something 
+
 
 #### Tip
 
