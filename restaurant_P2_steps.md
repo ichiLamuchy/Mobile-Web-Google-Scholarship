@@ -93,6 +93,17 @@ https://developers.google.com/web/ilt/pwa/working-with-indexeddb
         
         // make a function called newFetchR for indexed db
         
+        
+        var dbPromise = idb.open('restaurant_app', 4, function(upgradeDb) {
+          switch(upgradeDb.oldVersion) {
+            case 0:
+              var keyValStore = upgradeDb.createObjectStore('keyval');
+              keyValStore.put("world", "hello");
+            case 1:
+              upgradeDb.createObjectStore('people', { keyPath: 'name' });
+       
+       return dbPromise;
+              
         // if sw not exist, don't bother and error out
         // if it does
         // open indexed db restaurant_app
@@ -100,8 +111,8 @@ https://developers.google.com/web/ilt/pwa/working-with-indexeddb
         // it would throw error if the name of the object store exists
         
        
-            if (!upgradeDb.objectStoreNames.contains('firstOS')) {
-                upgradeDb.createObjectStore('firstOS');
+            if (!upgradeDb.objectStoreNames.contains('restaurants')) {
+                upgradeDb.createObjectStore('restaurants');
             }
         
         // make keypath : id
