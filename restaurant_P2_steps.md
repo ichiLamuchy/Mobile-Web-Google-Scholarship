@@ -163,7 +163,7 @@ it shoud happen fetchRestaurant function
 showRestaurant function
 6 call openSocket function within to show the restaurant
 7 get restaurant details from the object store then possibly send to another function 
-such as show post restrantinfo.js and mainjs?
+
 
 
 
