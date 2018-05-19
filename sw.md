@@ -1,5 +1,15 @@
 ### SW for Restaurant-APP-Project_1
-
+    https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle (read read read)
+    
+SW is a script which your browser runs in the backend. 
+To use SW you need to register first in your JS, then it goes to installing state,
+where you cache.open and tipically started caching static contents. When it gets activate, 
+you check if any contents can be deleted by checking against white list of array (using map and index of)
+Last stage (event) is fetch, you get responce from cache if the name of the contents mached to the event.request.
+If not you need to fetch it from netwowk (you need to clone the request) whitin the fetch, 
+you open another cache to store the responce from the network.
+    
+    
 
     const version= '7';
     const reviewCacheName = "restaurant-v" + version;
