@@ -133,36 +133,31 @@ https://developers.google.com/web/ilt/pwa/working-with-indexeddb
               .then(json => callback(null, json))
               .catch(err => callback(err, null))
           }
+          
+        // use inport idb from 'idb'; idb pollyfield 
+        // open db Promise the indexed .db
 
-use inport idb from 'idb'; idb pollyfield  
-Task: Cache the JSON responses for offline use by using the IndexedDB API.
+        var dbPromise = idb.open('restaurant-app', 1, function (upgradeDb){
+            if (!upgradeDb.objectStoreNames.contains('restaurants')) {
+                upgradeDb.createObjectStore('restraurants', {keyPath: 'id'});
+            }
+        }
 
-The json is details for the restaurants 
+        // make transaction write
 
-If sw is not there, don't bother using indexedDB
-1 creating promise for database by opening the data base
+        dbPromise.then(function(db){
+            var tx = db.transaction ('restaurants', 'readwrite');
+            var restaurantsStore = tx.objectStore('restaurants');
 
-2 within open database function create object store and name it
+            // add data from network 
+            resstaurantsStore.put(function(data){
+            return  fetch(http://localhotst:1337/restaurants")
+                .then (res=>res.json())
+                .then (json=>json);
+        }
 
-4 define keypath (id) 
-
-openSocket Function
-5 Parse the Json received then store in object sore, 
-it shoud happen fetchRestaurant function
-    
-    
-    
-        // this would be called if sw is not existed or any of fetch fall back
-        static fetchRestaurants(callback) {
-            fetch("http://localhost:1337/restaurants")
-              .then(resp => resp.json())
-              .then(json => callback(null, json))
-              .catch(err => callback(err, null))
-          }
-
-showRestaurant function
-6 call openSocket function within to show the restaurant
-7 get restaurant details from the object store then possibly send to another function 
+        // if it is there make transaction to read when request happens
+        // how do i do ?
 
 
 
