@@ -198,3 +198,19 @@ force update on reload check on dev tools - easier to develop
   3.Open object store on transaction        - step 2
   4.Optionally open index on object store
   5.Perform operation on object store or index
+
+#### Use of Localforage
+Enter localForage, a JavaScript library that provides the ease of use of localStorage with all the advanced features of IndexedDB.
+
+http://blog.teamtreehouse.com/using-localforage-offline-data-storage
+
+Just simple getter and setter
+
+localforage.getItem('key', callbackFunction);
+localforage.setItem('key', 'value', callbackFunction);
+
+JS to write one from network
+one from indexed DB
+
+
+
