@@ -212,5 +212,5 @@ localforage.setItem('key', 'value', callbackFunction);
 JS to write one from network
 one from indexed DB
 
-
-
+(from nicolas)
+http://podcast.freecodecamp.org/ep-33-code-dependencies-are-the-devil
