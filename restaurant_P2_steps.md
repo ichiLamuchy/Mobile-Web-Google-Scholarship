@@ -204,13 +204,19 @@ Enter localForage, a JavaScript library that provides the ease of use of localSt
 
 http://blog.teamtreehouse.com/using-localforage-offline-data-storage
 
-Just simple getter and setter
+    Just simple getter and setter
 
-localforage.getItem('key', callbackFunction);
-localforage.setItem('key', 'value', callbackFunction);
+    localforage.getItem('key', callbackFunction);
+    localforage.setItem('key', 'value', callbackFunction);
 
 JS to write one from network
 one from indexed DB
+
+
+## Manifest file
+
+https://medium.com/@subodhgarg/web-app-manifest-file-make-your-web-app-installable-b5fcdb2919b9
+https://www.lynda.com/CSS-tutorials/Creating-manifest-file/518052/567907-4.html
 
 (from nicolas)
 http://podcast.freecodecamp.org/ep-33-code-dependencies-are-the-devil
